@@ -19,15 +19,15 @@ class RazaRepository {
   }
 
   Future<GenericModelo> deleteRaza(int id) async {
-    return await RazaApi!.deleteRaza(TokenUtil.TOKEN, id);
+    return await razaApi!.deleteRaza(TokenUtil.TOKEN, id);
   }
 
   Future<RazaModelo> updateRaza(int id,
       RazaModelo raza) async {
-    return await RazaApi!.updateRaza(TokenUtil.TOKEN, id, raza);
+    return await razaApi!.updateRaza(TokenUtil.TOKEN, id, raza);
   }
 
   Future<RazaModelo> createRaza(RazaModelo raza) async {
-    return await RazaApi!.crearRaza(TokenUtil.TOKEN, raza);
+    return await razaApi!.crearRaza(TokenUtil.TOKEN, raza);
   }
 }

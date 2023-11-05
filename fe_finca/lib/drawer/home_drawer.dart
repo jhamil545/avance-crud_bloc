@@ -57,6 +57,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
         icon: Icon(Icons.share),
       ),*/
       DrawerList(
+        index: DrawerIndex.Testing,
+        labelName: 'Raza Bloc',
+        icon: Icon(Icons.radar),
+      ),
+      DrawerList(
         index: DrawerIndex.About,
         labelName: 'Información',
         icon: Icon(Icons.info),

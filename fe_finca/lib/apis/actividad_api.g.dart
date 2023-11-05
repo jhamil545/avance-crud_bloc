@@ -13,7 +13,7 @@ class _ActividadApi implements ActividadApi {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= UrlApi.urlApix;
+    baseUrl ??= 'http://192.168.1.34:8080';
   }
 
   final Dio _dio;
@@ -65,7 +65,7 @@ class _ActividadApi implements ActividadApi {
     )
             .compose(
               _dio.options,
-              '/asis/actividad/crear',
+              '/finca/actividad/crear',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -92,7 +92,7 @@ class _ActividadApi implements ActividadApi {
     )
             .compose(
               _dio.options,
-              '/asis/actividad/buscar/${id}',
+              '/finca/actividad/buscar/${id}',
               queryParameters: queryParameters,
               data: _data,
             )

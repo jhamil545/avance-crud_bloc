@@ -7,6 +7,7 @@ import 'package:asistencia_app/ui/asistenciax/asistenciax_page.dart';
 //import 'package:asistencia_app/ui/actividadb/actividad_main.dart';
 //import 'package:asistencia_app/ui/actividadfire/actividad_main.dart';
 import 'package:asistencia_app/ui/help_screen.dart';
+import 'package:asistencia_app/ui/raza/raza_main.dart';
 import 'package:flutter/material.dart';
 
 class NavigationHomeScreen extends StatefulWidget {
@@ -74,6 +75,10 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       }else if (drawerIndex == DrawerIndex.About) {
         setState(() {
           screenView = AsistenciaxPage();
+        });
+      }else if (drawerIndex == DrawerIndex.Testing) {
+        setState(() {
+          screenView = MainRaza();
         });
       } else {
         //do in your way......

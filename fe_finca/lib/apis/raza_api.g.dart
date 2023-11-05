@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'asistenciax_api.dart';
+part of 'raza_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'asistenciax_api.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _AsistenciaxApi implements AsistenciaxApi {
-  _AsistenciaxApi(
+class _RazaApi implements RazaApi {
+  _RazaApi(
     this._dio, {
     this.baseUrl,
   }) {
@@ -21,62 +21,88 @@ class _AsistenciaxApi implements AsistenciaxApi {
   String? baseUrl;
 
   @override
-  Future<List<AsistenciaxRespModelo>> getAsistenciapa(String token) async {
+  Future<List<RazaModelo>> getRaza(String token) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<AsistenciaxRespModelo>>(Options(
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<RazaModelo>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/finca/asistenciax/list',
+              '/finca/raza/list',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) =>
-            AsistenciaxRespModelo.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => RazaModelo.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<AsistenciaxModelo> createAsistenciapa(
+  Future<RazaModelo> crearRaza(
     String token,
-    AsistenciaxModelo asistenciapa,
+    RazaModelo raza,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
-    _data.addAll(asistenciapa.toJson());
+    _data.addAll(raza.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<AsistenciaxModelo>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<RazaModelo>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/finca/asistenciax/crear',
+              '/finca/raza/crear',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = AsistenciaxModelo.fromJson(_result.data!);
+    final value = RazaModelo.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GenericModelo> deleteAsistenciapa(
+  Future<RazaModelo> findRaza(
+    String token,
+    int id,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<RazaModelo>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/finca/raza/buscar/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RazaModelo.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GenericModelo> deleteRaza(
     String token,
     int id,
   ) async {
@@ -93,7 +119,7 @@ class _AsistenciaxApi implements AsistenciaxApi {
     )
             .compose(
               _dio.options,
-              '/finca/asistenciax/eliminar/${id}',
+              '/finca/raza/eliminar/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -103,31 +129,31 @@ class _AsistenciaxApi implements AsistenciaxApi {
   }
 
   @override
-  Future<AsistenciaxModelo> updateAsistenciapa(
+  Future<RazaModelo> updateRaza(
     String token,
     int id,
-    AsistenciaxModelo asistenciapa,
+    RazaModelo raza,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
-    _data.addAll(asistenciapa.toJson());
+    _data.addAll(raza.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<AsistenciaxModelo>(Options(
-      method: 'PATCH',
+        .fetch<Map<String, dynamic>>(_setStreamType<RazaModelo>(Options(
+      method: 'PUT',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/finca/asistenciax/editar/${id}',
+              '/finca/raza/editar/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = AsistenciaxModelo.fromJson(_result.data!);
+    final value = RazaModelo.fromJson(_result.data!);
     return value;
   }
 
